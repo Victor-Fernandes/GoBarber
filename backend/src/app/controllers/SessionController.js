@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import jwt from 'jsonwebtoken';
 import * as Yup from 'yup';
 
@@ -8,12 +9,11 @@ class SessionController {
   async store(req, res) {
     const schema = Yup.object().shape({
       email: Yup.string().required(),
-      password: Yup.string()
-        .required(),
+      password: Yup.string().required(),
     });
 
-    if(!(await schema.isValid(req.body))){
-      return res.status(401).json({error: 'login fails'})
+    if (!(await schema.isValid(req.body))) {
+      return res.status(401).json({ error: 'login fails' });
     }
 
     const { email, password } = req.body;
@@ -28,13 +28,14 @@ class SessionController {
       return res.status(401).json({ error: 'Password does not match' });
     }
 
-    const { id, name } = user;
+    const { id, name, provider } = user;
 
     return res.json({
       user: {
         id,
         name,
         email,
+        provider,
       },
       token: jwt.sign({ id }, authConfig.secret, {
         expiresIn: authConfig.expiresIn,

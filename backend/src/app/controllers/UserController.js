@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import * as Yup from 'yup';
 
 import User from '../models/User';
@@ -41,20 +42,20 @@ class UserController {
         .when('oldPassword', (oldPassword, field) =>
           oldPassword ? field.required() : field
         ),
-        confirmPassword: Yup.string().when('password', (password, field) =>
-          password ? field.required().oneOf([Yup.ref('password')]) : field
-        )
+      confirmPassword: Yup.string().when('password', (password, field) =>
+        password ? field.required().oneOf([Yup.ref('password')]) : field
+      ),
     });
 
-    if(!(await schema.isValid(req.body))){
-      return res.status(400).json({error: 'validations fails'});
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: 'validations fails' });
     }
 
     const { email, oldPassword } = req.body;
 
     const user = await User.findByPk(req.userId);
 
-    if (email !== user.email) {
+    if (email && email !== user.email) {
       const userExist = await User.findOne({ where: { email } });
 
       if (userExist) {
