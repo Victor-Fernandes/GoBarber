@@ -110,6 +110,15 @@ class AppointmentController {
       user: provider_id,
     });
 
+    /**
+     * checking if the provider_id is the msm that the req.userId
+     */
+    if (req.userId === provider_id) {
+      return res
+        .status(401)
+        .json({ error: 'User cannot make an appointment with himself!' });
+    }
+
     return res.json(appointment);
   }
 }
