@@ -157,11 +157,11 @@ class AppointmentController {
     await appointment.save();
 
     await Mail.sendMail({
-      // passando o from no send pq no default não está funcionando
+      // passando o from no sendMail pq no default não está funcionando
       from: 'Equipe Gobarber <noreply@gobarber.com>',
       to: `${appointment.provider.name} <${appointment.provider.email}>`,
       subject: 'Agendamento cancelado.',
-      template: 'cancellation',
+      template: 'cancellation', // path só identifica se tiver a extenção .handlebars
       context: {
         provider: appointment.provider.name,
         user: appointment.user.name,
