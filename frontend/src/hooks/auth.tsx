@@ -48,14 +48,14 @@ export const AuthProvider: React.FC = ({ children }) => {
     const { token, user } = response.data;
 
     localStorage.setItem('@GoBarber:token', token);
-    localStorage.setItem('@GoBarber:token', JSON.stringify(user));
+    localStorage.setItem('@GoBarber:user', JSON.stringify(user));
 
     setData({ token, user });
   }, []);
 
   const signOut = useCallback(() => {
     localStorage.removeItem('@GoBarber:token');
-    localStorage.removeItem('GoBarber:user');
+    localStorage.removeItem('@GoBarber:user');
 
     setData({} as AuthState);
   }, []);
