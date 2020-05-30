@@ -3,7 +3,7 @@ import { Platform } from 'react-native';
 
 export const Container = styled.View`
   flex: 1;
-  padding: 0 30px ${Platform.OS === 'android' ? 250 : 40}px;
+  padding: 0 30px ${Platform.OS === 'android' ? 150 : 40}px;
   align-items: center;
   justify-content: center;
 `;
