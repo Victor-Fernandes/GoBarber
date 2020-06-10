@@ -11,7 +11,6 @@ export const Container = styled.div<ContainerProps>`
   background: #232129;
   border-radius: 10px;
   padding: 16px;
-  width: 400%;
 
   border: 2px solid #232129;
   color: #666360;
