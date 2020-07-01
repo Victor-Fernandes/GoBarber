@@ -1,24 +1,11 @@
 /* eslint-disable no-shadow */
 import { Router } from 'express';
 
-import AuthenticateUserService from '@modules/Users/services/AuthenticateUserService';
-import UsersRepository from '@modules/Users/infra/typeorm/repositories/UsersRepository';
+import SessionsController from '../Controllers/SessionsController';
 
 const sessionsRouter = Router();
+const sessionController = new SessionsController();
 
-sessionsRouter.post('/', async (request, response) => {
-  const { email, password } = request.body;
-
-  const usersRepository = new UsersRepository();
-
-  const authenticateUser = new AuthenticateUserService(usersRepository);
-
-  const { user, token } = await authenticateUser.execute({
-    email,
-    password,
-  });
-
-  return response.json({ user, token });
-});
+sessionsRouter.post('/', sessionController.create);
 
 export default sessionsRouter;
