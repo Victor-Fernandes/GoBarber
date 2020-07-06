@@ -1,4 +1,6 @@
 import { uuid } from 'uuidv4';
+import { isEqual } from 'date-fns';
+
 // Remover td que tenha conexao com o banco de dados
 import IAppointmentsRepository from '@modules/Appointments/repositories/IAppointmentsRepository';
 import ICreateAppointmentDTO from '@modules/Appointments/dtos/ICreateAppointmentDTO';
@@ -10,8 +12,8 @@ class AppointmentsRepository implements IAppointmentsRepository {
   private appointments: Appointment[] = [];
 
   public async findByDate(date: Date): Promise<Appointment | undefined> {
-    const findByDate = this.appointments.find(
-      appointment => appointment.date === date
+    const findByDate = this.appointments.find(appointment =>
+      isEqual(appointment.date, date)
     );
 
     return findByDate;
