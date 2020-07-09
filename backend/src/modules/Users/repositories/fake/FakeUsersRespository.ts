@@ -3,8 +3,6 @@ import ICreateUserDTO from '@modules/Users/dtos/ICreateUserDTO';
 import { uuid } from 'uuidv4';
 import User from '../../infra/typeorm/entities/User';
 
-/** Repositorio de Users especifico para o typeorm */
-
 class UsersRepository implements IUsersRepository {
   private users: User[] = [];
 
