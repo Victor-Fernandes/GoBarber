@@ -29,6 +29,11 @@ export default class CreateUserTokens1594753693085
             type: 'timestamp',
             default: 'now()',
           },
+          {
+            name: 'updated_at',
+            type: 'timestamp',
+            default: 'now()',
+          },
         ],
         foreignKeys: [
           {
