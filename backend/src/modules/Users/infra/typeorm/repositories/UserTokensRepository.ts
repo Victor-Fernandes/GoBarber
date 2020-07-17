@@ -3,7 +3,7 @@ import IUserTokensRepository from '@modules/Users/repositories/IUserTokensReposi
 
 import UserToken from '../entities/UserToken';
 
-class UsersTokenRepository implements IUserTokensRepository {
+class UserTokensRepository implements IUserTokensRepository {
   private ormRepositorie: Repository<UserToken>;
 
   constructor() {
@@ -29,4 +29,4 @@ class UsersTokenRepository implements IUserTokensRepository {
   }
 }
 
-export default UsersTokenRepository;
+export default UserTokensRepository;
