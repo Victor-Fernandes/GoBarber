@@ -1,7 +1,7 @@
-import User from '@modules/Users/infra/typeorm/entities/User';
-import AppError from '@shared/error/AppError';
 import { injectable, inject } from 'tsyringe';
 import IStorageProvider from '@shared/container/providers/StorageProvider/models/IStorageProvider';
+import User from '@modules/Users/infra/typeorm/entities/User';
+import AppError from '@shared/error/AppError';
 import IUsersRepositories from '../repositories/IUsersRepositories';
 
 interface IRequest {
