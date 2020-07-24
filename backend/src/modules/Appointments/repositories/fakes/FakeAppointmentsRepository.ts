@@ -1,5 +1,5 @@
 import { uuid } from 'uuidv4';
-import { isEqual, getDate, getMonth, getYear } from 'date-fns';
+import { isEqual, getMonth, getYear } from 'date-fns';
 
 // Remover td que tenha conexao com o banco de dados
 import IAppointmentsRepository from '@modules/Appointments/repositories/IAppointmentsRepository';
@@ -20,7 +20,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
     return findAppointment;
   }
 
-  public async findAllInMonthFromProviderDTO({
+  public async findAllInMonthFromProvider({
     provider_id,
     month,
     year,

@@ -13,7 +13,7 @@ class AppointmentsRepository implements IAppointmentsRepository {
     this.ormRepositorie = getRepository(Appointment);
   }
 
-  public async findAllInMonthFromProviderDTO({
+  public async findAllInMonthFromProvider({
     provider_id,
     month,
     year,
