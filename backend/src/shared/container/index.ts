@@ -12,6 +12,8 @@ import UserTokensRepository from '@modules/Users/infra/typeorm/repositories/User
 import IAppointmentsRepository from '@modules/Appointments/repositories/IAppointmentsRepository';
 import AppointmentsRepository from '@modules/Appointments/infra/typeorm/repositories/AppointmentsRepository';
 
+import INotificationsRepository from '@modules/Notifications/repositories/INotificationsRepository';
+import NotificationsRepository from '@modules/Notifications/infra/typeorm/repositories/NotificationRepositories';
 // passando o <IAppointmentsRepository> garante q a variavel
 // passado como segundo parametro vai ter o formato do IAppointmentsRepository
 // Singleton:> Intancia a classe apenas uma unica vez, e sempre que os services
@@ -31,4 +33,9 @@ container.registerSingleton<IUsersRepository>(
 container.registerSingleton<IUsersTokenRepository>(
   'UserTokensRepository',
   UserTokensRepository
+);
+
+container.registerSingleton<INotificationsRepository>(
+  'NotificationsRepository',
+  NotificationsRepository
 );
