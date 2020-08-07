@@ -1,5 +1,4 @@
 <h1 align="center"><img src="frontend/src/assets/logo.svg"></h1>
-<h1 align="center" style="font-size: 60px; font-weight: bold;">GoBarber</h1>
 
 <!--ts-->
    * [Tecnologias](#-Tecnologias)
@@ -17,6 +16,8 @@
 - **[React](https://pt-br.reactjs.org/)**
 - **[React Native](https://reactnative.dev/)**
 - **[TypeScript](https://www.typescriptlang.org/)**
+- **[PostgreSQL](https://www.postgresql.org/)**
+- **[MongoDB](https://www.mongodb.com/)**
 
 # Back-end
   <h4 align="center">🚧 🚀 Em construção...  🚧 </h4>
