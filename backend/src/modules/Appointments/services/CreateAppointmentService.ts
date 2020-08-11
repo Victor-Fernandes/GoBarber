@@ -4,6 +4,7 @@ import { inject, injectable } from 'tsyringe';
 import Appointment from '@modules/Appointments/infra/typeorm/entities/Appointment';
 import AppError from '@shared/error/AppError';
 import IAppointmentsRepository from '@modules/Appointments/repositories/IAppointmentsRepository';
+import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
 import INotificationsRepository from '@modules/Notifications/repositories/INotificationsRepository';
 
 interface IRequest {
@@ -20,7 +21,10 @@ class CreateAppointmentService {
     private appointmentsRepository: IAppointmentsRepository,
 
     @inject('NotificationsRepository')
-    private notificationsRepository: INotificationsRepository
+    private notificationsRepository: INotificationsRepository,
+
+    @inject('CacheProvider')
+    private cacheProvider: ICacheProvider
   ) {}
 
   public async execute({
@@ -59,10 +63,22 @@ class CreateAppointmentService {
     // olhar documentação do date-fns para ver a formatação da data
     const dateFormated = format(appointmentDate, "dd/MM/yyyy 'às' HH:mm");
 
+    // const appointmenDateFormatted = format(
+    //   appointmentDate, "dd/MM/yyyy 'às' HH:mm'h'",
+    //   {locale: ptBR}
+    // )
+
     await this.notificationsRepository.create({
       recipient_id: provider_id,
       content: `New appointment for ${dateFormated}`,
     });
+
+    await this.cacheProvider.invalidate(
+      `provider-appointmens:${provider_id}:${format(
+        appointmentDate,
+        'yyyy-M-d'
+      )}`
+    );
 
     return appointment;
   }
