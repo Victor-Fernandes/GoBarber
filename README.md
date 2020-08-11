@@ -18,6 +18,7 @@
 - **[TypeScript](https://www.typescriptlang.org/)**
 - **[PostgreSQL](https://www.postgresql.org/)**
 - **[MongoDB](https://www.mongodb.com/)**
+- **[Redis](https://redis.io/)**
 
 # Back-end
   <h4 align="center">🚧 🚀 Em construção...  🚧 </h4>
