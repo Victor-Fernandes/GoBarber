@@ -1,17 +1,20 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable no-await-in-loop */
+import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
 import ListProvidersAppointmentService from './ListProvidersAppointmentService';
-
 // cria uma categoria para os testes
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
 let listProviderAppointmentService: ListProvidersAppointmentService;
+let fakeCacheProvider: FakeCacheProvider;
 
 describe('ListProvidersAppointment', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository();
+    fakeCacheProvider = new FakeCacheProvider();
     listProviderAppointmentService = new ListProvidersAppointmentService(
-      fakeAppointmentsRepository
+      fakeAppointmentsRepository,
+      fakeCacheProvider
     );
   });
 
