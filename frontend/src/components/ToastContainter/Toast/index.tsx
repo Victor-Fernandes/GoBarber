@@ -35,7 +35,8 @@ const Toast: React.FC<ToastProps> = ({ message, style }) => {
   return (
     <Container
       type={message.type}
-      hasDescription={!!message.description}
+      // nao passar para uma propiedade html um valor q seja um boolean
+      hasDescription={Number(!!message.description)}
       style={style}
     >
       {icons[message.type || 'info']}
