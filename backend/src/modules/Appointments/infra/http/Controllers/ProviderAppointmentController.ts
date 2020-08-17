@@ -16,8 +16,8 @@ class ProviderAppointmentsController {
     const appointments = await listProviderAppointments.execute({
       provider_id,
       day: Number(day),
-      year: Number(month),
-      month: Number(year),
+      year: Number(year),
+      month: Number(month),
     });
 
     return response.json(classToClass(appointments));

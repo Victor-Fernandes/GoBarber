@@ -9,7 +9,7 @@ import ProviderAppointmentsController from '../Controllers/ProviderAppointmentCo
 
 const appointmentsRouter = Router();
 const appointmentsController = new AppointmentsController();
-const providerAppointmentController = new ProviderAppointmentsController();
+const providerAppointmentsController = new ProviderAppointmentsController();
 
 appointmentsRouter.use(ensureAuthenticated);
 
@@ -29,6 +29,6 @@ appointmentsRouter.post(
   }),
   appointmentsController.create
 );
-appointmentsRouter.get('/me', providerAppointmentController.index);
+appointmentsRouter.get('/me', providerAppointmentsController.index);
 
 export default appointmentsRouter;
