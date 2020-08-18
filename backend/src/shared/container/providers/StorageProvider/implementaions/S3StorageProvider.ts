@@ -24,7 +24,9 @@ class DiskStorageProvider implements IStorageProvider {
       throw new AppError('File not found');
     }
 
-    const fileContent = await fs.promises.readFile(originalPath);
+    const fileContent = await fs.promises.readFile(originalPath, {
+      encoding: 'utf-8',
+    });
 
     await this.client
       .putObject({
