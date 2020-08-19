@@ -59,6 +59,7 @@ export const ProviderInfo = styled.View`
   flex: 1;
   margin-left: 20px;
 `;
+
 export const ProviderMeta = styled.View`
   flex-direction: row;
   align-items: center;
