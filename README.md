@@ -94,7 +94,7 @@
   <h4 align="center">🚧 🚀 Em construção...  🚧 </h4>
 
 # Autor
-  <img style="border-radius: 50%" src="https://avatars2.githubusercontent.com/u/34258399?s=460&u=cd540c22a75983975fe085f8bfc62b72220a9079&v=4"  width="100px" alt="Victor Fernandes">
+  <img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/34258399?s=460&u=cd540c22a75983975fe085f8bfc62b72220a9079&v=4"  width="100px" alt="Victor Fernandes">
 
   <br></br>
 
