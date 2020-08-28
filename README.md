@@ -59,7 +59,36 @@
   ```
 
 # Front-end
-  <h4 align="center">🚧 🚀 Em construção...  🚧 </h4>
+  
+  ### Pré-requisitos
+  Inicializar o backend primeiro.
+
+  ```bash
+  #Clone this project
+  git clone https://github.com/Victor-Fernandes/GoBarber.git
+
+  #Access the project folder in cmd/terminal
+  cd Gobarber/frontend
+
+  #Install dependencies
+  yarn
+
+  or
+
+  nmp install
+
+  #run the aplication
+  yarn start
+
+  #run tests
+  yarn test
+
+  #coverage
+  yarn test:coverage
+
+  #Server will start at port: 3333 -go to http://localhost:3333
+  ```
+
 
 # Mobile
   <h4 align="center">🚧 🚀 Em construção...  🚧 </h4>

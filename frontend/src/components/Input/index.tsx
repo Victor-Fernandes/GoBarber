@@ -52,6 +52,7 @@ const Input: React.FC<InputProps> = ({
 
   return (
     <Container
+      data-testid="input-container"
       style={containerStyle}
       isErrored={!!error}
       isFilled={isFilled}
