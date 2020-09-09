@@ -4,3 +4,4 @@ tmp/*
 requisitos.md
 ormconfig.json
 .env
+dist
